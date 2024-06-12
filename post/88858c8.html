@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>长安链 | Destiny</title><meta name="author" content="Gwj"><meta name="copyright" content="Gwj"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="长安链第一章 安装长安链1.1 通过命令行部署长安链1.1.1依赖配置1.1.1.1账号信息 123账号：&#x2F;*****&#x2F; 密码：&#x2F;*****&#x2F; https:&#x2F;&#x2F;git.chainmaker.org.cn  12用户信息：密码： 1.1.1.2.git 下载 1gwj4952@ubuntu:~$ sudo apt install git 1.1.1.3.golang-go下载 123456789gw">
+<meta property="og:type" content="article">
+<meta property="og:title" content="长安链">
+<meta property="og:url" content="http://jerryc.me/post/88858c8.html">
+<meta property="og:site_name" content="Destiny">
+<meta property="og:description" content="长安链第一章 安装长安链1.1 通过命令行部署长安链1.1.1依赖配置1.1.1.1账号信息 123账号：&#x2F;*****&#x2F; 密码：&#x2F;*****&#x2F; https:&#x2F;&#x2F;git.chainmaker.org.cn  12用户信息：密码： 1.1.1.2.git 下载 1gwj4952@ubuntu:~$ sudo apt install git 1.1.1.3.golang-go下载 123456789gw">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://jerryc.me/img/avatar.png">
+<meta property="article:published_time" content="2024-06-12T03:43:02.000Z">
+<meta property="article:modified_time" content="2024-06-12T03:45:22.914Z">
+<meta property="article:author" content="Gwj">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://jerryc.me/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://jerryc.me/post/88858c8.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: '',
+  enable_page_level_ads: 'true'
+});</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?你的代码";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '长安链',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-06-12 11:45:22'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/index_img.png')"><nav id="nav"><span id="blog-info"><a href="/" title="Destiny"><span class="site-name">Destiny</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">长安链</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-06-12T03:43:02.000Z" title="发表于 2024-06-12 11:43:02">2024-06-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-06-12T03:45:22.914Z" title="更新于 2024-06-12 11:45:22">2024-06-12</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="长安链"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="长安链"><a href="#长安链" class="headerlink" title="长安链"></a>长安链</h1><h2 id="第一章-安装长安链"><a href="#第一章-安装长安链" class="headerlink" title="第一章 安装长安链"></a>第一章 安装长安链</h2><h3 id="1-1-通过命令行部署长安链"><a href="#1-1-通过命令行部署长安链" class="headerlink" title="1.1 通过命令行部署长安链"></a>1.1 通过命令行部署长安链</h3><h4 id="1-1-1依赖配置"><a href="#1-1-1依赖配置" class="headerlink" title="1.1.1依赖配置"></a>1.1.1依赖配置</h4><p>1.1.1.1账号信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">账号：/*****/</span><br><span class="line"></span><br><span class="line"> 密码：/*****/</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://git.chainmaker.org.cn">https://git.chainmaker.org.cn</a> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户信息：</span><br><span class="line">密码：</span><br></pre></td></tr></table></figure>
+<p>1.1.1.2.git 下载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gwj4952@ubuntu:~$ sudo apt install git</span><br></pre></td></tr></table></figure>
+<p>1.1.1.3.golang-go下载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gwj4952@ubuntu:~$ sudo apt install golang-go</span><br><span class="line">/***版本需更新**/</span><br><span class="line">gwj4952@ubuntu:~$ sudo apt remove golang-go</span><br><span class="line">gwj4952@ubuntu:~$ tar -xzf go1.22.2.linux-amd64.tar.gz</span><br><span class="line"></span><br><span class="line">wget https://golang.google.cn/dl/go1.22.2.linux-amd64.tar.gz</span><br><span class="line"></span><br><span class="line">gwj4952@ubuntu:~$ export PATH=$PATH:/usr/local/go/bin</span><br><span class="line">gwj4952@ubuntu:~$ source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>1.1.1.3.7z</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gwj4952@ubuntu:~$ sudo apt-get install p7zip-full p7zip-rar</span><br></pre></td></tr></table></figure>
+<p>1.1.1.4.gcc</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/**查看版本**/</span><br><span class="line">gcc --version</span><br></pre></td></tr></table></figure>
+<p>1.1.1.5./<strong>*升级</strong>/</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install centos-release-scl</span><br><span class="line">sudo yum install devtoolset-7-gcc*</span><br><span class="line">scl enable devtoolset-7 bash</span><br></pre></td></tr></table></figure>
+<h4 id="1-1-2-环境搭建"><a href="#1-1-2-环境搭建" class="headerlink" title="1.1.2 环境搭建"></a>1.1.2 环境搭建</h4><h5 id="1-1-2-1-使用脚本搭建"><a href="#1-1-2-1-使用脚本搭建" class="headerlink" title="1.1.2.1 使用脚本搭建"></a>1.1.2.1 使用脚本搭建</h5><blockquote>
+<p>适用于<code>Linux</code>、<code>MacOS</code></p>
+</blockquote>
+<h5 id="1-1-2-1-1-源码下载"><a href="#1-1-2-1-1-源码下载" class="headerlink" title="1.1.2.1.1 源码下载"></a>1.1.2.1.1 源码下载<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/quickstart/通过命令行体验链.html#id8"></a></h5><p>从<a target="_blank" rel="noopener" href="https://chainmaker.org.cn/">长安链官网</a>下载源码：<a target="_blank" rel="noopener" href="https://git.chainmaker.org.cn/chainmaker/chainmaker-go">https://git.chainmaker.org.cn/chainmaker/chainmaker-go</a></p>
+<blockquote>
+<p>当前为私有仓库，需要先进行账号注册</p>
+<p>账号：</p>
+<p>密码：</p>
+</blockquote>
+<ul>
+<li>下载<code>chainmaker-go</code>源码到本地</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone -b v3.0.0 --depth=1 https://git.chainmaker.org.cn/chainmaker/chainmaker-go.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下载<code>证书生成工具</code>源码到本地</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone -b v3.0.0  --depth=1 https://git.chainmaker.org.cn/chainmaker/chainmaker-cryptogen.git</span><br></pre></td></tr></table></figure>
+<h5 id="1-1-2-1-2-源码编译"><a href="#1-1-2-1-2-源码编译" class="headerlink" title="1.1.2.1.2 源码编译"></a>1.1.2.1.2 源码编译<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/quickstart/通过命令行体验链.html#id9"></a></h5><ul>
+<li>编译证书生成工具</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install make</span><br><span class="line">$ cd chainmaker-cryptogen</span><br><span class="line">$ export GOPROXY=https://goproxy.cn,direct</span><br><span class="line">$ make</span><br><span class="line">报错：</span><br><span class="line">go: chainmaker.org/chainmaker/common/v3@v3.0.0: Get https://proxy.golang.org/chainmaker.org/chainmaker/common/v3/@v/v3.0.0.mod: dial tcp 172.217.25.177:443: connect: connection refused</span><br><span class="line">make: *** [Makefile:6: chainmaker-cryptogen] Error 1</span><br><span class="line">修改：</span><br><span class="line">gwj4952@ubuntu:~/chainmaker-cryptogen$ export GOPROXY=https://goproxy.cn,direct</span><br><span class="line">gwj4952@ubuntu:~/chainmaker-cryptogen$ make</span><br><span class="line">修改为国内代理</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="1-1-2-1-3-配置文件生成"><a href="#1-1-2-1-3-配置文件生成" class="headerlink" title="1.1.2.1.3 配置文件生成"></a>1.1.2.1.3 配置文件生成<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/quickstart/通过命令行体验链.html#id10"></a></h5><ul>
+<li>将编译好的<code>chainmaker-cryptogen</code>，软连接到<code>chainmaker-go/tools</code>目录</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 进入工具目录</span><br><span class="line">$ cd chainmaker-go/tools</span><br><span class="line"></span><br><span class="line"># 软连接chainmaker-cryptogen到tools目录下</span><br><span class="line">$ ln -s ../../chainmaker-cryptogen/ .</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2.1版本之后，ChainMaker支持多种身份模式，由于不同身份模式下，配置文件的目录结构和内容差异较大，在此我们选择身份模式PermissionedWithCert（详情见<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/instructions/长安链账户整体介绍.html">身份权限管理</a>）作为示例。</li>
+</ul>
+<h5 id="1-1-2-1-4-PermissionedWithCert"><a href="#1-1-2-1-4-PermissionedWithCert" class="headerlink" title="1.1.2.1.4. PermissionedWithCert"></a>1.1.2.1.4. PermissionedWithCert<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/quickstart/通过命令行体验链.html#permissionedwithcert"></a></h5><p>原始的身份模式，即证书模式</p>
+<p>进入<code>chainmaker-go/scripts</code>目录，执行<code>prepare.sh</code>脚本生成单链4节点集群配置，存于路径<code>chainmaker-go/build</code>中</p>
+<blockquote>
+<p><code>prepare.sh</code>脚本支持生成<code>solo</code>模式节点证书和配置，以及4/7/10/13/16节点的证书和配置</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"># 进入脚本目录</span><br><span class="line">$ cd ../scripts</span><br><span class="line"></span><br><span class="line"># 查看脚本帮助</span><br><span class="line">$ ./prepare.sh -h</span><br><span class="line">Usage:  </span><br><span class="line">  prepare.sh node_cnt(1/4/7/10/13/16) chain_cnt(1-4) p2p_port(default:11301) rpc_port(default:12301)</span><br><span class="line">    eg1: prepare.sh 4 1</span><br><span class="line">    eg2: prepare.sh 4 1 11301 12301</span><br><span class="line"></span><br><span class="line"># 生成单链4节点集群的证书和配置(遇到问题)</span><br><span class="line">/*begin check params...</span><br><span class="line">param P2P_PORT 11301</span><br><span class="line">param RPC_PORT 12301</span><br><span class="line">param DOCKER_VM_RUNTIME_PORT 32351</span><br><span class="line">param DOCKER_GO_ENGINE_PORT 22351</span><br><span class="line">param DOCKER_JAVA_ENGINE_PORT 23351</span><br><span class="line">./prepare.sh: line 181: /home/gwj4952/chainmaker-go/tools/chainmaker-cryptogen/chainmaker-cryptogen: No such file or directory</span><br><span class="line">**/</span><br><span class="line">$ ./prepare.sh 4 1</span><br><span class="line">begin check params...</span><br><span class="line">begin generate certs, cnt: 4</span><br><span class="line">input consensus type (1-TBFT(default),3-MAXBFT,4-RAFT,6-ABFT):</span><br><span class="line">input log level (DEBUG|INFO(default)|WARN|ERROR):</span><br><span class="line">enable vm go (YES|NO(default))</span><br><span class="line">enable vm java (YES|NO(default))</span><br><span class="line">begin generate node1 config...</span><br><span class="line">begin generate node2 config...</span><br><span class="line">begin generate node3 config...</span><br><span class="line">begin generate node4 config...</span><br><span class="line"></span><br><span class="line"># 查看生成好的节点证书和配置</span><br><span class="line">$ tree -L 3 ../build/</span><br><span class="line">../build/</span><br><span class="line">├── config</span><br><span class="line">│   ├── node1</span><br><span class="line">│   │   ├── certs</span><br><span class="line">│   │   ├── chainconfig</span><br><span class="line">│   │   ├── chainmaker.yml</span><br><span class="line">│   │   └── log.yml</span><br><span class="line">│   ├── node2</span><br><span class="line">│   │   ├── certs</span><br><span class="line">│   │   ├── chainconfig</span><br><span class="line">│   │   ├── chainmaker.yml</span><br><span class="line">│   │   └── log.yml</span><br><span class="line">│   ├── node3</span><br><span class="line">│   │   ├── certs</span><br><span class="line">│   │   ├── chainconfig</span><br><span class="line">│   │   ├── chainmaker.yml</span><br><span class="line">│   │   └── log.yml</span><br><span class="line">│   └── node4</span><br><span class="line">│       ├── certs</span><br><span class="line">│       ├── chainconfig</span><br><span class="line">│       ├── chainmaker.yml</span><br><span class="line">│       └── log.yml</span><br><span class="line">├── crypto-config</span><br><span class="line">│   ├── wx-org1.chainmaker.org</span><br><span class="line">│   │   ├── ca</span><br><span class="line">│   │   ├── node</span><br><span class="line">│   │   └── user</span><br><span class="line">│   ├── wx-org2.chainmaker.org</span><br><span class="line">│   │   ├── ca</span><br><span class="line">│   │   ├── node</span><br><span class="line">│   │   └── user</span><br><span class="line">│   ├── wx-org3.chainmaker.org</span><br><span class="line">│   │   ├── ca</span><br><span class="line">│   │   ├── node</span><br><span class="line">│   │   └── user</span><br><span class="line">│   └── wx-org4.chainmaker.org</span><br><span class="line">│       ├── ca</span><br><span class="line">│       ├── node</span><br><span class="line">│       └── user</span><br><span class="line">├── crypto_config.yml</span><br><span class="line">└── test_keys.yml</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关于自动生成的端口说明</li>
+</ul>
+<p>通过<code>prepare.sh</code>脚本生成的配置，默认是在单台服务器上部署，故自动生成的端口号，是从一个起始端口号开始依次递增，可以通过命令行参数修改起始端口号。</p>
+<p>主要有2个端口，<code>p2p</code>端口（用于节点互联）和<code>rpc</code>端口（用于客户端与节点通信），<code>p2p</code>起始端口为<code>11301</code>，<code>rpc</code>起始端口为<code>12301</code>。</p>
+<p>如果生成4个节点的配置，<code>p2p</code>端口分别为：<code>11301、11302、11303、11304</code>，<code>rpc</code>端口分别为：<code>12301、12302、12303、12304</code></p>
+<p>如果是在多机部署，希望生成固定的端口号，请参考：<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/instructions/多机部署.html">【多机部署】</a></p>
+<h5 id="1-1-2-1-5-编译及安装包制作"><a href="#1-1-2-1-5-编译及安装包制作" class="headerlink" title="1.1.2.1.5. 编译及安装包制作"></a>1.1.2.1.5. 编译及安装包制作<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/quickstart/通过命令行体验链.html#id11"></a></h5><ul>
+<li>生成证书（prepare.sh脚本）后执行<code>build_release.sh</code>脚本，将编译<code>chainmaker-go</code>模块，并打包生成安装，存于路径<code>chainmaker-go/build/release</code>中</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ./build_release.sh</span><br><span class="line">$ tree ../build/release/</span><br><span class="line">../build/release/</span><br><span class="line">├── chainmaker-v3.0.0-wx-org1.chainmaker.org-20231229155428-x86_64.tar.gz</span><br><span class="line">├── chainmaker-v3.0.0-wx-org2.chainmaker.org-20231229155428-x86_64.tar.gz</span><br><span class="line">├── chainmaker-v3.0.0-wx-org3.chainmaker.org-20231229155428-x86_64.tar.gz</span><br><span class="line">├── chainmaker-v3.0.0-wx-org4.chainmaker.org-20231229155428-x86_64.tar.gz</span><br><span class="line">└── crypto-config-20231229155428.tar.gz</span><br></pre></td></tr></table></figure>
+<h5 id="1-1-2-1-6-启动节点集群"><a href="#1-1-2-1-6-启动节点集群" class="headerlink" title="1.1.2.1.6. 启动节点集群"></a>1.1.2.1.6. 启动节点集群<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/quickstart/通过命令行体验链.html#id12"></a></h5><ul>
+<li>执行<code>cluster_quick_start.sh</code>脚本，会解压各个安装包，调用<code>bin</code>目录中的<code>start.sh</code>脚本，启动<code>chainmaker</code>节点</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./cluster_quick_start.sh normal</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动成功后，将*.tar.gz备份，以免下次启动再次解压缩时文件被覆盖</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir -p ../build/bak</span><br><span class="line">$ mv ../build/release/*.tar.gz ../build/bak</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>若需要关闭集群，使用脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./cluster_quick_stop.sh</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="1-1-2-1-7-查看节点启动使用正常"><a href="#1-1-2-1-7-查看节点启动使用正常" class="headerlink" title="1.1.2.1.7. 查看节点启动使用正常"></a>1.1.2.1.7. 查看节点启动使用正常<a target="_blank" rel="noopener" href="https://docs.chainmaker.org.cn/v3.0.0/html/quickstart/通过命令行体验链.html#id13"></a></h5><ul>
+<li>查看进程是否存在</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ps -ef|grep chainmaker | grep -v grep</span><br><span class="line">25261  2146  4 19:55 pts/20   00:00:01 ./chainmaker start -c ../config/wx-org1.chainmaker.org/chainmaker.yml</span><br><span class="line">25286  2146  4 19:55 pts/20   00:00:01 ./chainmaker start -c ../config/wx-org2.chainmaker.org/chainmaker.yml</span><br><span class="line">25309  2146  4 19:55 pts/20   00:00:01 ./chainmaker start -c ../config/wx-org3.chainmaker.org/chainmaker.yml</span><br><span class="line">25335  2146  4 19:55 pts/20   00:00:01 ./chainmaker start -c ../config/wx-org4.chainmaker.org/chainmaker.yml</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看端口是否监听</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ netstat -lptn | grep 1230</span><br><span class="line">tcp6       0      0 :::12301                :::*                    LISTEN      25261/./chainmaker  </span><br><span class="line">tcp6       0      0 :::12302                :::*                    LISTEN      25286/./chainmaker  </span><br><span class="line">tcp6       0      0 :::12303                :::*                    LISTEN      25309/./chainmaker  </span><br><span class="line">tcp6       0      0 :::12304                :::*                    LISTEN      25335/./chainmaker </span><br></pre></td></tr></table></figure>
+<ul>
+<li>检查节点是否有<code>ERROR</code>日志</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ cat ../build/release/*/bin/panic.log</span><br><span class="line">$ cat ../build/release/*/log/system.log</span><br><span class="line">$ cat ../build/release/*/log/system.log |grep &quot;ERROR\|put block\|all necessary&quot;</span><br><span class="line">//若看到all necessary peers connected则表示节点已经准备就绪。</span><br><span class="line">//若看到all necessary peers connected则表示节点已经准备就绪。</span><br><span class="line"></span><br><span class="line">sudo lsof -i :32351</span><br><span class="line">sudo lsof -i :32352</span><br><span class="line">sudo lsof -i :32353</span><br><span class="line">sudo lsof -i :32354</span><br><span class="line"></span><br><span class="line">sudo kill -9 &lt;PID&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h3 id="1-2-通过管理台部署长安链"><a href="#1-2-通过管理台部署长安链" class="headerlink" title="1.2 通过管理台部署长安链"></a>1.2 通过管理台部署长安链</h3><p>1.2.1docker\docker-compose环境配置</p>
+<p>   docker安装参考<a target="_blank" rel="noopener" href="https://www.runoob.com/docker/ubuntu-docker-install.html">Ubuntu Docker 安装 | 菜鸟教程 (runoob.com)</a>中“手动安装”部分内容。</p>
+<p>   docker-compose安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gwj4952@ubuntu:~$ DOCKER_CONFIG=$&#123;DOCKER_CONFIG:-$HOME/.docker&#125;</span><br><span class="line">gwj4952@ubuntu:~$ mkdir -p $DOCKER_CONFIG/cli-plugins</span><br><span class="line">gwj4952@ubuntu:~$ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line">gwj4952@ubuntu:~$  sudo chmod +x /usr/local/bin/docker-compose</span><br><span class="line">gwj4952@ubuntu:~$ docker-compose -v</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>   若已安装，请通过命令查看版本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker -v</span><br><span class="line">$ docker-compose -v</span><br></pre></td></tr></table></figure>
+<p>1.2.2部署管理台<br>   管理平台主要由前端、后端及数据库三部分组成。通过docker的方式部署。</p>
+<p>​    代码下载<br>​    下载地址： <a target="_blank" rel="noopener" href="https://git.chainmaker.org.cn/chainmaker/management-backend">https://git.chainmaker.org.cn/chainmaker/management-backend</a> 下载代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone -b v3.0.0 --depth=1 https://git.chainmaker.org.cn/chainmaker/management-backend.git</span><br></pre></td></tr></table></figure>
+<p>1.2.3启动容器<br>   下载后端代码后，进入management-backend目录，执行以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd management-backend</span><br><span class="line">$ sudo docker-compose up</span><br></pre></td></tr></table></figure>
+<p>​    启动成功后，浏览器访问localhost即可，如果发现启动过程中有端口被占用的情况，请修改docker-compose.yml文件中的端口</p>
+<p>1.2.4 通过脚本部署长安链</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cd release</span><br><span class="line">$ sudo ./start.sh</span><br><span class="line"></span><br><span class="line">执行完成后通过如下命令检查是否启动成功</span><br><span class="line">$ cat */log/system.log |grep &quot;ERROR\|put block\|all necessary&quot;</span><br><span class="line">//若看到all necessary peers connected则表示节点已经准备就绪。</span><br></pre></td></tr></table></figure>
+<h2 id="第二章-长安链智能合约的开发"><a href="#第二章-长安链智能合约的开发" class="headerlink" title="第二章 长安链智能合约的开发"></a>第二章 长安链智能合约的开发</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.ChainMaker官方Golang合约SDK支持通过go.mod的方式引用，可直接使用go get引用，示例如下：</span><br><span class="line"></span><br><span class="line">  gwj4952@ubuntu:~$ export GOPROXY=https://goproxy.io,direct</span><br><span class="line"></span><br><span class="line">  gwj4952@ubuntu:~$ go install chainmaker.org/chainmaker/contract-sdk-go/v2@v2.3.5</span><br></pre></td></tr></table></figure>
+<h4 id="部署长安链CMC"><a href="#部署长安链CMC" class="headerlink" title="部署长安链CMC"></a>部署长安链CMC</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cmc工具的编译&amp;运行方式如下：</span><br><span class="line">创建工作目录 $WORKDIR 比如 ~/chainmaker</span><br><span class="line">启动测试链 在工作目录下 使用脚本搭建</span><br><span class="line">  # 编译cmc</span><br><span class="line">  $ cd chainmaker-go/tools/cmc</span><br><span class="line">  $ go build</span><br><span class="line">  # 配置测试数据</span><br><span class="line">  $ cp -rf chainmaker-go/build/crypto-config chainmaker-go/tools/cmc/testdata/ # 使用chainmaker-cryptogen生成的测试链的证书</span><br><span class="line">  # 查看help</span><br><span class="line">  $ cd chainmaker-go/tools/cmc</span><br><span class="line">  $ ./cmc --help</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-使用Golang进行智能合约的开发"><a href="#2-1-使用Golang进行智能合约的开发" class="headerlink" title="2.1 使用Golang进行智能合约的开发"></a>2.1 使用Golang进行智能合约的开发</h3><p>1.通过命令行进行搭建一个docker_go的长安链</p>
+<p>建立链可查看上述1.2</p>
+<p>注意：与上述命令行不同</p>
+<p>   docker_vm go链配置需要修改下面步骤</p>
+<p>   enable vm go (YES|NO(default))选择YES</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ ./prepare.sh 4 1</span><br><span class="line">begin check params...</span><br><span class="line">begin generate certs, cnt: 4</span><br><span class="line">input consensus type (1-TBFT(default),3-MAXBFT,4-RAFT,6-ABFT):</span><br><span class="line">input log level (DEBUG|INFO(default)|WARN|ERROR):</span><br><span class="line">enable vm go (YES|NO(default))</span><br><span class="line">enable vm java (YES|NO(default))</span><br><span class="line">begin generate node1 config...</span><br><span class="line">begin generate node2 config...</span><br><span class="line">begin generate node3 config...</span><br><span class="line">begin generate node4 config...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>​    启动节点集群</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo  ./cluster_quick_start.sh normal</span><br></pre></td></tr></table></figure>
+<p>如果发现端口被占用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -tulnp | grep 1130</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240507100712608.png" alt="image-20240507100712608"></p>
+<p>将进程关闭</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gej4952@ubuntu:~/chainmaker-go/scripts$ sudo kill -9 4767</span><br><span class="line">gej4952@ubuntu:~/chainmaker-go/scripts$ sudo kill -9 4799</span><br><span class="line">gej4952@ubuntu:~/chainmaker-go/scripts$ sudo kill -9 4783</span><br><span class="line">gej4952@ubuntu:~/chainmaker-go/scripts$ sudo kill -9 4816</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>重新启动节点集群</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo  ./cluster_quick_stop.sh normal</span><br><span class="line"></span><br><span class="line">sudo  ./cluster_quick_start.sh normal</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-通过cmc命令行的形式编译、部署、调用合约"><a href="#2-2-通过cmc命令行的形式编译、部署、调用合约" class="headerlink" title="2.2 通过cmc命令行的形式编译、部署、调用合约"></a>2.2 通过cmc命令行的形式编译、部署、调用合约</h3><h2 id="第三章-长安链SDK的使用"><a href="#第三章-长安链SDK的使用" class="headerlink" title="第三章 长安链SDK的使用"></a>第三章 长安链SDK的使用</h2><h3 id="3-1-通过Go-SDK-创建长安链客户端ChainClient"><a href="#3-1-通过Go-SDK-创建长安链客户端ChainClient" class="headerlink" title="3.1 通过Go SDK 创建长安链客户端ChainClient"></a>3.1 通过Go SDK 创建长安链客户端ChainClient</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">问题：go: sdk-go-demo/simple imports</span><br><span class="line">	chainmaker.org/chainmaker/sdk-go/v2/utils: chainmaker.org/chainmaker/sdk-go/v2@v2.3.4-0.20230818054724-58c1c764ea10: Get &quot;https://proxy.golang.org/chainmaker.org/chainmaker/sdk-go/v2/@v/v2.3.4-0.20230818054724-58c1c764ea10.zip&quot;: dial tcp 172.217.160.113:443: connect: connection refused</span><br><span class="line">解答：</span><br><span class="line"></span><br><span class="line">gej4952@ubuntu:~/sdk-go-demo-v2.3.2$ go clean -modcache</span><br><span class="line">gej4952@ubuntu:~/sdk-go-demo-v2.3.2$ export GOPROXY=https://goproxy.cn,direct</span><br><span class="line">gej4952@ubuntu:~/sdk-go-demo-v2.3.2$ go mod tidy</span><br><span class="line">gej4952@ubuntu:~/sdk-go-demo-v2.3.2$ go run simple/main.go</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="3-2-通过Go-SDK-部署合约"><a href="#3-2-通过Go-SDK-部署合约" class="headerlink" title="3.2 通过Go SDK 部署合约"></a>3.2 通过Go SDK 部署合约</h3><h3 id="3-3-通过Go-SDK-调用合约（上链、查询方法）"><a href="#3-3-通过Go-SDK-调用合约（上链、查询方法）" class="headerlink" title="3.3 通过Go SDK 调用合约（上链、查询方法）"></a>3.3 通过Go SDK 调用合约（上链、查询方法）</h3><h3 id="3-4-通过Go-SDK调用长安链智能合约上链、查询的demo"><a href="#3-4-通过Go-SDK调用长安链智能合约上链、查询的demo" class="headerlink" title="3.4 通过Go SDK调用长安链智能合约上链、查询的demo"></a>3.4 通过Go SDK调用长安链智能合约上链、查询的demo</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">启动节点集群</span><br><span class="line">$ cd chainmaker-go/scripts</span><br><span class="line">$ ./cluster_quick_start.sh normal</span><br><span class="line">运行main.go文件</span><br><span class="line">$ cd sdk-go-demo-v2.3.2</span><br><span class="line">$ go run simple/main.go</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\86182\AppData\Roaming\Typora\typora-user-images\image-20240507091213046.png" alt="image-20240507091213046"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://jerryc.me">Gwj</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://jerryc.me/post/88858c8.html">http://jerryc.me/post/88858c8.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://jerryc.me" target="_blank">Destiny</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/2792ee20.html" title="php反序列化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">php反序列化</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Gwj</div><div class="author-info__description">少年何妨梦摘星，会挽桑弓射玉衡</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://haiyong.site/moyu/"><i class="iconfont icon-youxishoubing"></i><span>摸鱼</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">计算机技术与网络安全技术持续更新中...请私信+v:gwj4952</div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople1.js"></script><script src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/zdog.dist.js"></script><script id="rendered-js" src="https://fastly.jsdelivr.net/gh/xiaopengand/blogCdn@latest/xzxr/twopeople.js"></script><style>.card-widget.card-announcement {
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  cursor: move;
+}</style><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%95%BF%E5%AE%89%E9%93%BE"><span class="toc-number">1.</span> <span class="toc-text">长安链</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%AE%89%E8%A3%85%E9%95%BF%E5%AE%89%E9%93%BE"><span class="toc-number">1.1.</span> <span class="toc-text">第一章 安装长安链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%83%A8%E7%BD%B2%E9%95%BF%E5%AE%89%E9%93%BE"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 通过命令行部署长安链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.1.1依赖配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">1.1.2 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-1-%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E6%90%AD%E5%BB%BA"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">1.1.2.1 使用脚本搭建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-1-1-%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD%EF%83%81"><span class="toc-number">1.1.1.2.2.</span> <span class="toc-text">1.1.2.1.1 源码下载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-1-2-%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%EF%83%81"><span class="toc-number">1.1.1.2.3.</span> <span class="toc-text">1.1.2.1.2 源码编译</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-1-3-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%EF%83%81"><span class="toc-number">1.1.1.2.4.</span> <span class="toc-text">1.1.2.1.3 配置文件生成</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-1-4-PermissionedWithCert%EF%83%81"><span class="toc-number">1.1.1.2.5.</span> <span class="toc-text">1.1.2.1.4. PermissionedWithCert</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-1-5-%E7%BC%96%E8%AF%91%E5%8F%8A%E5%AE%89%E8%A3%85%E5%8C%85%E5%88%B6%E4%BD%9C%EF%83%81"><span class="toc-number">1.1.1.2.6.</span> <span class="toc-text">1.1.2.1.5. 编译及安装包制作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-1-6-%E5%90%AF%E5%8A%A8%E8%8A%82%E7%82%B9%E9%9B%86%E7%BE%A4%EF%83%81"><span class="toc-number">1.1.1.2.7.</span> <span class="toc-text">1.1.2.1.6. 启动节点集群</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2-1-7-%E6%9F%A5%E7%9C%8B%E8%8A%82%E7%82%B9%E5%90%AF%E5%8A%A8%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%B8%B8%EF%83%81"><span class="toc-number">1.1.1.2.8.</span> <span class="toc-text">1.1.2.1.7. 查看节点启动使用正常</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text"> </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%80%9A%E8%BF%87%E7%AE%A1%E7%90%86%E5%8F%B0%E9%83%A8%E7%BD%B2%E9%95%BF%E5%AE%89%E9%93%BE"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2 通过管理台部署长安链</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%95%BF%E5%AE%89%E9%93%BE%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E7%9A%84%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.</span> <span class="toc-text">第二章 长安链智能合约的开发</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E9%95%BF%E5%AE%89%E9%93%BECMC"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">部署长安链CMC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BD%BF%E7%94%A8Golang%E8%BF%9B%E8%A1%8C%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E7%9A%84%E5%BC%80%E5%8F%91"><span class="toc-number">1.3.1.</span> <span class="toc-text">2.1 使用Golang进行智能合约的开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E9%80%9A%E8%BF%87cmc%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E5%BD%A2%E5%BC%8F%E7%BC%96%E8%AF%91%E3%80%81%E9%83%A8%E7%BD%B2%E3%80%81%E8%B0%83%E7%94%A8%E5%90%88%E7%BA%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.2 通过cmc命令行的形式编译、部署、调用合约</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E9%95%BF%E5%AE%89%E9%93%BESDK%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">第三章 长安链SDK的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E9%80%9A%E8%BF%87Go-SDK-%E5%88%9B%E5%BB%BA%E9%95%BF%E5%AE%89%E9%93%BE%E5%AE%A2%E6%88%B7%E7%AB%AFChainClient"><span class="toc-number">1.4.1.</span> <span class="toc-text">3.1 通过Go SDK 创建长安链客户端ChainClient</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E9%80%9A%E8%BF%87Go-SDK-%E9%83%A8%E7%BD%B2%E5%90%88%E7%BA%A6"><span class="toc-number">1.4.2.</span> <span class="toc-text">3.2 通过Go SDK 部署合约</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E9%80%9A%E8%BF%87Go-SDK-%E8%B0%83%E7%94%A8%E5%90%88%E7%BA%A6%EF%BC%88%E4%B8%8A%E9%93%BE%E3%80%81%E6%9F%A5%E8%AF%A2%E6%96%B9%E6%B3%95%EF%BC%89"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.3 通过Go SDK 调用合约（上链、查询方法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E9%80%9A%E8%BF%87Go-SDK%E8%B0%83%E7%94%A8%E9%95%BF%E5%AE%89%E9%93%BE%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E4%B8%8A%E9%93%BE%E3%80%81%E6%9F%A5%E8%AF%A2%E7%9A%84demo"><span class="toc-number">1.4.4.</span> <span class="toc-text">3.4 通过Go SDK调用长安链智能合约上链、查询的demo</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/88858c8.html" title="长安链">长安链</a><time datetime="2024-06-12T03:43:02.000Z" title="发表于 2024-06-12 11:43:02">2024-06-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/2792ee20.html" title="php反序列化">php反序列化</a><time datetime="2024-06-11T06:59:56.000Z" title="发表于 2024-06-11 14:59:56">2024-06-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/4a17b156.html" title="Hello World">Hello World</a><time datetime="2024-06-10T15:24:53.666Z" title="发表于 2024-06-10 23:24:53">2024-06-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/index_img.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Gwj</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'b16a1fa0e63c46a4b8f28abfb06ae3fe';
+  var gaud_map_key = 'e2b04289e870b005374ee030148d64fd&s=rsv3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><!-- hexo injector body_end end --></body></html>
